@@ -1,62 +1,25 @@
 var express = require('express');
 var router = express.Router();
-var CarModel = require('../models/CarModel.js');
+var CarController = require('../controllers/CarController.js');
 
-/*
-* GET
-*/
 router.get('/', function (req, res) {
-  CarModel.find(function (err, cars) {
-    return res.json(cars);
-  });
+  CarController.list(req, res);
 });
 
-/*
-* GET
-*/
 router.get('/:id', function (req, res) {
-  var id = req.params.id;
-  CarModel.findOne({_id: id}, function (err, car) {
-    return res.json(car);
-  });
+  CarController.show(req, res);
 });
 
-/*
-* POST
-*/
 router.post('/', function (req, res) {
-  var car = new CarModel({
-    make : req.body.make,
-    year : req.body.year
-  });
-
-  car.save(function(err, car){
-    return res.json(car);
-  });
+  CarController.create(req, res);
 });
 
-/*
-* PUT
-*/
 router.put('/:id', function (req, res) {
-  var id = req.params.id;
-  CarModel.findOne({_id: id}, function (err, car) {
-    car.make = req.body.make ? req.body.make : car.make;
-
-    car.save(function (err, car) {
-      return res.json(car);
-    });
-  });
+  CarController.update(req, res);
 });
 
-/*
-* DELETE
-*/
 router.delete('/:id', function (req, res) {
-  var id = req.params.id;
-  CarModel.findByIdAndRemove(id, function (err, car) {
-    return res.json(car);
-  });
+  CarController.remove(req, res);
 });
 
 module.exports = router;

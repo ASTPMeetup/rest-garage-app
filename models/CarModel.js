@@ -6,4 +6,4 @@ var carSchema = new Schema({
   'year' : {type: Number, max: 2016}
 });
 
-module.exports = mongoose.model('Task', carSchema);
+module.exports = mongoose.model('CarModel', carSchema);
