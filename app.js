@@ -18,6 +18,16 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+/** render plain html:
+*
+* app.set('views', __dirname + '/views');
+* app.engine('html', require('ejs').renderFile);
+* app.get('/about', function (req, res)
+* {
+*    res.render('about.html');
+* });
+*/
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
