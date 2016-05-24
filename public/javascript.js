@@ -31,12 +31,11 @@ $(document).ready(function(){
   function addDeleteOption(){
     $('img').on('click', function(e){
         e.preventDefault();
-        var target = $(e.currentTarget);
         var id = $(this).attr('id');
         $.ajax('/cars/' + id, {
             method: 'DELETE',
             success: function(){
-              target.closest('div').remove();
+              e.currentTarget.closest('div').remove();
             }
         });
     });
@@ -46,19 +45,15 @@ $(document).ready(function(){
     $('.editLink').on('click', function(e){
         e.preventDefault();
         var id = $(this).attr('href');
-        var carDiv = $(this).closest('div');
-        var car = carDiv.children('ul');
+        var car = $(this).parent();
         var year_details = car.text().slice(0,4);
-        var make_details = car.text().slice(5);
-        var updateLink = carDiv.children('.editLink');
-
+        var make_details = car.text().slice(5,-6);
         var edit_car_form = '<form name="car_edit" class="car_edit">'+
             '<input name="year" type="text" id="year_edit" maxlength="4" placeholder="'+year_details+'" required>'+
             '<input name="make" type="text" id="make_edit" placeholder="'+make_details+'" required>'+
             '<br><input type="submit" value="update" class="button" id="update_submit"></form>';
 
         car.replaceWith(edit_car_form);
-        updateLink.remove();
         updateCar(id);
     });
   }
@@ -66,14 +61,13 @@ $(document).ready(function(){
   function updateCar(id){
     $('.car_edit').on('submit', function(e){
         e.preventDefault();
-        var data = $('.car_edit').serialize();
         $.ajax('/cars/' + id, {
             method: 'PUT',
-            data: data,
+            data: $('.car_edit').serialize(),
             success: function(car){
               var car_listing = printCarListing(car);
-              var carDivToReplace = $('.car_edit').closest('div');
-              $(carDivToReplace).replaceWith(car_listing);
+              var carToUpdate = $('.car_edit').closest('div');
+              $(carToUpdate).replaceWith(car_listing);
               addDeleteOption();
               addUpdateOption();
             }
@@ -83,8 +77,7 @@ $(document).ready(function(){
 
   function printCarListing(car){
     var newCar = '<div id="car_div"><img src="del.jpg" id="'+car._id+'">'+
-      '<ul id="car_info">'+car.year+' '+car.make+'</ul>'+
-      '<a href="'+car._id+'" class="editLink"><span id="editTool">update</span></a></div>';
+      '<ul id="car_info">'+car.year+' '+car.make+' <a href="'+car._id+'" class="editLink">update</a></ul></div>';
     return newCar;
   }
 });
