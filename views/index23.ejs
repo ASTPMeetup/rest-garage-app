@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script type="text/javascript" src='javascript.js'></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <blockquote>
+     <p class="intro">Welcome to the <%= title %>. This RESTful tool allows you to create, update, remove and list all cars in our database, demonstrating my infinite knowledge of AJAX!</p>
+    <br>
+    </blockquote>
+    <form name="car_input" class="car_input">
+      <p>Year:</p>
+        <input name="year" type="text" class="year_input" maxlength="4" required>
+      <p>Car Make:</p>
+        <input name="make" type="text" class="make_input" required>
+      <br>
+      <br>
+      <input type="submit" value="Add car" class="button">
+    </form>
+    <br>
+    <blockquote>
+    <div class="car-list"></div>
+  </blockquote>
+  </body>
+</html>

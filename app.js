@@ -10,7 +10,7 @@ var users = require('./routes/users');
 var cars = require('./routes/cars');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/garage');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/garage');
 
 var app = express();
 

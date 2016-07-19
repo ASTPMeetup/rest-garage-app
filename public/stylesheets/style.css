@@ -1,15 +1,6 @@
 body {
-  padding: 30px;
-  font-family: Arial;
-  font-size: 20px;
-  color: #262626;
-}
-
-blockquote {
-    padding: 1px 20px;
-    margin: 0 0 10px;
-    border-left: 5px solid #eee;
-    width: 700px;
+  font: 20px "Segoe UI";
+  color:  #595959;
 }
 
 .button {
@@ -23,19 +14,15 @@ blockquote {
     display: inline-block;
 }
 
-img {
+.delete_img {
   height: 15px;
   opacity: .5;
 }
 
-img, ul, .car_edit {
+.delete_img, ul, .car_edit {
   display: inline;
   padding-left: 15px;
   margin-bottom: 5px;
-}
-
-.car_div {
-  margin: 5px;
 }
 
 ul > .editLink {
@@ -55,27 +42,33 @@ ul > .editLink {
   margin-right: 5px;
   border: none;
   font-size: 20px;
+  display: inline-block;
 }
 
 #make_edit  {
-  width: 150px;
+  width: 200px;
   margin-right: 5px;
   border: none;
   font-size: 20px;
+  display: inline-block;
 }
 
-.car_edit > .button{
-  font-size: 12px;
-  height: 20px;
-  width: 50px;
-  margin-right: 5px;
-  background-color: #6666FF;
-  border: none;
-  color: white;
-  padding: 0px 3px;
-  text-align: center;
-  text-decoration: none;
+.car_edit {
+  width: 400px;
   display: inline-block;
+}
+
+.button {
+  text-align: center;
+  color: #999999;
+  text-decoration: none;
+  padding: 0px;
+  background: transparent;
+  height: 28px;
+  font-size: 15px;
+  border-radius: 10px;
+  width: 100px;
+  border: 1px solid #cccccc;
 }
 
 .car_edit > input:focus {
@@ -84,5 +77,27 @@ ul > .editLink {
 }
 
 #update_submit {
-  margin-left:40px;
+  margin-left:10px;
+}
+
+#car_count {
+  text-align: center;
+  width: 100%;
+}
+
+.make_input, .year_input {
+  width: 280px;
+  font-size: 20px;
+  height: 30px;
+  text-decoration: none;
+  border: 0;
+  border-bottom: 1px solid #e6e6e6;
+  color: #737373;
+  outline: none;
+  background-color: transparent;
+}
+
+.car_input {
+  margin: 20px;
+  width: 300px;
 }

@@ -1,29 +1,106 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Item - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/stylesheets/shop-item.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><%= title %></a>
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <!-- <p class="lead">Add Car</p>
+                <br> -->
+                <form name="car_input" class="car_input">
+                  <p>Year:</p>
+                    <input name="year" type="text" class="year_input" maxlength="4" required>
+                  <br>
+                  <br>
+                  <p>Car Make:</p>
+                    <input name="make" type="text" class="make_input" required>
+                  <br>
+                  <br>
+                  <input type="submit" value="Add car" class="button">
+                </form>
+            </div>
+
+            <div class="col-md-8">
+
+                <div class="thumbnail">
+                    <img src="car-garage.jpg" class="img-responsive" alt="">
+                    <div class="caption-full">
+                        <h3><%= title %></h3>
+                        <p>Welcome to the <%= title %>. This RESTful tool allows you to create, update, remove and list all cars in our database, demonstrating my infinite knowledge of AJAX!</p>
+                    </div>
+                </div>
+
+                <div class="well"><div class="database"></div><p id="car_count"></p></div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; HemiNotes 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Bootstrap Core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script type="text/javascript" src='javascript.js'></script>
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <blockquote>
-     <p class="intro">Welcome to the <%= title %>. This RESTful tool allows you to create, update, remove and list all cars in our database, demonstrating my infinite knowledge of AJAX!</p>
-    <br>
-    </blockquote>
-    <form name="car_input" class="car_input">
-      <p>Year:</p>
-        <input name="year" type="text" class="year_input" maxlength="4" required>
-      <p>Car Make:</p>
-        <input name="make" type="text" class="make_input" required>
-      <br>
-      <br>
-      <input type="submit" value="Add car" class="button">
-    </form>
-    <br>
-    <blockquote>
-    <div class="car-list"></div>
-  </blockquote>
-  </body>
+    <script src="bootstrap.js"></script>
+
+</body>
+
 </html>
