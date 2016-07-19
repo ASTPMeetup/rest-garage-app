@@ -11,9 +11,9 @@ $(document).ready(function(){
         addDeleteOption();
         addUpdateOption();
         carCount++;
-     }
+        $('#car_count').html(carCount + ' cars in lot.');
+      }
     }
-    $('#car_count').html(carCount + ' cars in lot.');
   });
 
   $('.car_input').on('submit', function(e){
@@ -21,13 +21,13 @@ $(document).ready(function(){
       method: 'POST',
       data: $('.car_input').serialize(),
       success: function(car){
+        $('.car_input').each(function(){this.reset();});
         var car_listing = printCarListing(car);
         $('.database').prepend(car_listing);
         addDeleteOption();
         addUpdateOption();
-        $('.car_input').each(function(){this.reset();});
+        carCount = carCount + 1;
         $('#car_count').empty();
-        carCount++;
         $('#car_count').html(carCount + ' cars in lot.');
       }
     });
@@ -40,10 +40,9 @@ $(document).ready(function(){
         $.ajax('/cars/' + id, {
             method: 'DELETE',
             success: function(){
-              e.currentTarget.closest('div').remove();
-              $('#car_count').empty();
-              carCount--;
-              $('#car_count').html(carCount + ' cars in lot.');
+             carCount = carCount - 1;
+             $('#car_count').empty();
+             $('#car_count').html(carCount + ' cars in lot.');
             }
         });
     });
@@ -90,5 +89,15 @@ $(document).ready(function(){
       '<ul id="car_info">'+car.year+' '+car.make+' <a href="'+car._id+'" class="editLink">update</a></ol></li>'+
       '<hr></div>';
     return newCar;
+  }
+
+  function incrementCount(){
+    carCount = carCount + 1;
+    $('#car_count').empty();
+    $('#car_count').html(carCount + ' cars in lot.');
+  }
+
+  function deductCount(){
+
   }
 });
