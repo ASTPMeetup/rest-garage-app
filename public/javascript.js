@@ -11,8 +11,8 @@ $(document).ready(function(){
         addDeleteOption();
         addUpdateOption();
         carCount++;
-        $('#car_count').html(carCount + ' cars in lot.');
       }
+      $('#car_count').html(carCount + ' cars in lot.');
     }
   });
 
@@ -26,9 +26,7 @@ $(document).ready(function(){
         $('.database').prepend(car_listing);
         addDeleteOption();
         addUpdateOption();
-        carCount = carCount + 1;
-        $('#car_count').empty();
-        $('#car_count').html(carCount + ' cars in lot.');
+        carCount++;
       }
     });
   });
@@ -40,9 +38,8 @@ $(document).ready(function(){
         $.ajax('/cars/' + id, {
             method: 'DELETE',
             success: function(){
-             carCount = carCount - 1;
-             $('#car_count').empty();
-             $('#car_count').html(carCount + ' cars in lot.');
+             carCount--;
+             location.reload();
             }
         });
     });
@@ -89,15 +86,5 @@ $(document).ready(function(){
       '<ul id="car_info">'+car.year+' '+car.make+' <a href="'+car._id+'" class="editLink">update</a></ol></li>'+
       '<hr></div>';
     return newCar;
-  }
-
-  function incrementCount(){
-    carCount = carCount + 1;
-    $('#car_count').empty();
-    $('#car_count').html(carCount + ' cars in lot.');
-  }
-
-  function deductCount(){
-
   }
 });
