@@ -98,6 +98,13 @@ ul > .editLink {
 }
 
 .car_input {
-  margin: 20px;
+  margin-top: 25px;
+  margin-left: 10px;
   width: 300px;
+}
+
+#back_button {
+  height: 50px;
+  float: left;
+  margin: 10px;
 }

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('.button').hover(function(){ $(this).css('opacity', '0.7');}, function(){ $(this).css('opacity', '1');});
   var carCount = 0;
 
   $.ajax('/cars', {
@@ -60,6 +61,7 @@ $(document).ready(function(){
 
         car.replaceWith(edit_car_form);
         updateCar(id);
+        $('.button').hover(function(){ $(this).css('opacity', '0.7');}, function(){ $(this).css('opacity', '1');});
     });
   }
 
