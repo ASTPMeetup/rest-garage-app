@@ -51,15 +51,19 @@ $(document).ready(function(){
         e.preventDefault();
         var id = $(this).attr('href');
         var car = $(this).closest('ul');
-        // var car = $target.closest('div');
-        var year_details = car.text().slice(0,4);
-        var make_details = car.text().slice(5,-6);
-        var edit_car_form = '<form name="car_edit" class="car_edit">'+
-            '<input name="year" type="text" id="year_edit" maxlength="4" placeholder="'+year_details+'" required>'+
-            '<input name="make" type="text" id="make_edit" placeholder="'+make_details+'" required>'+
+        var year_details = $(this).siblings("#item1").text();
+        var color_details = $(this).siblings("#item2").text();
+        var make_details = $(this).siblings("#item3").text();
+        var mileage_details = $(this).siblings("#item4").text().slice(9, 17);
+        var edit_car_form = '<img src="del.jpg" id="'+id+'" class="delete_img"><form name="car_edit" class="car_edit">'+
+            '<input name="year" type="text" id="year_edit" maxlength="4" value="'+year_details+'" required>'+
+            '<input name="color" type="text" id="color_edit" value="'+color_details+'" required>'+
+            '<input name="make" type="text" id="make_edit" value="'+make_details+'" required>'+
+            '<input name="mileage" type="text" id="mileage_edit" value="'+mileage_details+'" required>'+
             '<input type="submit" value="update" class="button" id="update_submit"></form>';
 
         car.replaceWith(edit_car_form);
+        car.replaceWith(car);
         updateCar(id);
         $('.button').hover(function(){ $(this).css('opacity', '0.7');}, function(){ $(this).css('opacity', '1');});
     });
@@ -84,8 +88,9 @@ $(document).ready(function(){
 
   function printCarListing(car){
     var newCar = '<div class="row">'+
-      '<ol class="col-md-12" id="car_div"><img src="del.jpg" id="'+car._id+'" class="delete_img">'+
-      '<ul id="car_info">'+car.year+' '+car.make+' <a href="'+car._id+'" class="editLink">update</a></ol></li>'+
+      '<ol class="col-md-12" id="car_div"><ul style="padding-left: 5px;"><img src="del.jpg" id="'+car._id+'" class="delete_img">'+
+      '<span id="item1">'+car.year+'</span> <span id="item2">'+car.color+'</span> <span id="item3">'+car.make+'</span>'+
+      ' (<span id="item4">mileage: '+car.mileage+'</span>) <a href="'+car._id+'" class="editLink">update</a></ol></li>'+
       '<hr></div>';
     return newCar;
   }

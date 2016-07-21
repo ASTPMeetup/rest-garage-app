@@ -3,26 +3,24 @@ body {
   color:  #595959;
 }
 
-.button {
-    margin: 10px 0px 10px 0px;
-    background-color: #6666FF;
-    border: none;
-    color: white;
-    padding: 8px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
 .delete_img {
   height: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
   opacity: .5;
 }
 
 .delete_img, ul, .car_edit {
   display: inline;
-  padding-left: 15px;
-  margin-bottom: 5px;
+  background-color: transparent;
+}
+
+#car_info {
+  margin-left: 0px;
+}
+
+#car_div {
+  padding: 10px;
 }
 
 ul > .editLink {
@@ -38,24 +36,39 @@ ul > .editLink {
 }
 
 #year_edit {
-  width: 45px;
+  width: 50px;
   margin-right: 5px;
   border: none;
   font-size: 20px;
   display: inline-block;
+  background-color: #e6e6e6;
 }
 
 #make_edit  {
-  width: 200px;
+  width: 155px;
   margin-right: 5px;
   border: none;
   font-size: 20px;
   display: inline-block;
+  background-color: #e6e6e6;
 }
 
-.car_edit {
-  width: 400px;
+#color_edit {
+  width: 60px;
+  margin-right: 5px;
+  border: none;
+  font-size: 20px;
   display: inline-block;
+  background-color: #e6e6e6;
+}
+
+#mileage_edit  {
+  width: 75px;
+  margin-right: 5px;
+  border: none;
+  font-size: 20px;
+  display: inline-block;
+  background-color: #e6e6e6;
 }
 
 .button {
@@ -85,7 +98,7 @@ ul > .editLink {
   width: 100%;
 }
 
-.make_input, .year_input {
+.make_input, .year_input, .mileage_input, .color_input {
   width: 280px;
   font-size: 20px;
   height: 30px;
@@ -107,4 +120,8 @@ ul > .editLink {
   height: 50px;
   float: left;
   margin: 10px;
+}
+
+#car-div {
+  display: inline-block;
 }
