@@ -65,6 +65,7 @@ $(document).ready(function(){
         car.replaceWith(edit_car_form);
         car.replaceWith(car);
         updateCar(id);
+        addDeleteOption();
         $('.button').hover(function(){ $(this).css('opacity', '0.7');}, function(){ $(this).css('opacity', '1');});
     });
   }
