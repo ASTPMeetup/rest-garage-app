@@ -16,13 +16,6 @@
 
     <!-- Custom CSS -->
     <link href="/stylesheets/shop-item.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
 </head>
@@ -45,30 +38,29 @@
 
         <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <form name="car_input" class="car_input">
-                  <p>Year:</p>
-                    <input name="year" type="text" class="year_input" maxlength="4" required>
+                  <label>Year:</p>
+                    <input name="year" type="text" class="year_input" maxlength="4" placeholder=" 1991" required>
                   <br>
                   <br>
-                  <p>Color:</p>
-                    <input name="color" type="text" class="color_input" required>
+                  <label>Color:</label>
+                    <input name="color" type="text" class="color_input" placeholder=" Blue" required>
                   <br>
                   <br>
-                  <p>Car Make:</p>
-                    <input name="make" type="text" class="make_input" required>
+                  <label>Car Make &#38; Model:</label>
+                    <input name="make" type="text" class="make_input" placeholder=" Toyota Camry" required>
                   <br>
                   <br>
-                  <p>Car Mileage:</p>
-                    <input name="mileage" type="text" class="mileage_input" maxlength="7" required>
-                  <br>
+                  <label>Car Mileage:</label>
+                    <input name="mileage" type="text" class="mileage_input" maxlength="7"  placeholder=" 73,000" required>
                   <br>
                   <br>
                   <input type="submit" value="Add car" class="button">
                 </form>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 
                 <div class="thumbnail">
                     <img src="car-garage.jpg" class="img-responsive" alt="">
