@@ -1,6 +1,5 @@
 $(document).ready(function(){
-  $('.button').hover(function(){ $(this).css('opacity', '0.7');}, function(){ $(this).css('opacity', '1');});
-  var carCount = 0;
+$('.button').hover(function(){ $(this).css('opacity', '0.7');}, function(){ $(this).css('opacity', '1');});
 
   $.ajax('/cars', {
     method: 'GET',
@@ -11,9 +10,7 @@ $(document).ready(function(){
         $('.database').prepend(car_listing);
         addDeleteOption();
         addUpdateOption();
-        carCount++;
       }
-      $('#car_count').html(carCount + ' cars in lot.');
     }
   });
 
@@ -28,7 +25,6 @@ $(document).ready(function(){
         $('.database').prepend(car_listing);
         addDeleteOption();
         addUpdateOption();
-        carCount++;
       }
     });
   });
@@ -37,11 +33,11 @@ $(document).ready(function(){
     $('.delete_img').on('click', function(e){
         e.preventDefault();
         var id = $(this).attr('id');
+        var $this = $(this);
         $.ajax('/cars/' + id, {
             method: 'DELETE',
             success: function(){
-             carCount--;
-             location.reload();
+             $this.closest("div").remove();
             }
         });
     });
@@ -89,7 +85,7 @@ $(document).ready(function(){
  }
 
   function printCarListing(car){
-    var newCar = '<div class="row">'+
+    var newCar = '<div class="row" id="' + car.make + car._id.substring(10,13) + '">'+
       '<ol class="col-md-12" id="car_div"><ul style="padding-left: 5px;"><img src="del.jpg" id="'+car._id+'" class="delete_img">'+
       '<span id="item1">'+car.year+'</span> <span id="item2">'+car.color+'</span> <span id="item3">'+car.make+'</span>'+
       ' (<span id="item4">mileage: '+car.mileage+'</span>) <a href="'+car._id+'" class="editLink">update</a></ol></li>'+
