@@ -31,7 +31,7 @@ ul > .editLink {
   margin-left: 10px;
 }
 
-#car_div:hover > ul > .editLink {
+ol:hover > ul > .editLink {
   display: inline;
 }
 
@@ -128,6 +128,6 @@ ul > .editLink {
   margin: 10px;
 }
 
-#car-div {
+.car-div {
   display: inline-block;
 }

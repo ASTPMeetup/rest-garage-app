@@ -38,22 +38,22 @@
 
         <div class="row">
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div role="form" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <form name="car_input" class="car_input">
-                  <label>Year:</p>
-                    <input name="year" type="text" class="year_input" maxlength="4" placeholder=" 1991" required>
+                  <label id="year">Year:</label>
+                    <input aria-labelledby="year" name="year" type="text" class="year_input" maxlength="4" placeholder=" 1991" required>
                   <br>
                   <br>
-                  <label>Color:</label>
-                    <input name="color" type="text" class="color_input" placeholder=" Blue" required>
+                  <label id="color">Color:</label>
+                    <input aria-labelledby="color" name="color" type="text" class="color_input" placeholder=" Blue" required>
                   <br>
                   <br>
-                  <label>Car Make &#38; Model:</label>
-                    <input name="make" type="text" class="make_input" placeholder=" Toyota Camry" required>
+                  <label id="make_and_model">Car Make &#38; Model:</label>
+                    <input aria-labelledby="make_and_model" name="make" type="text" class="make_input" placeholder=" Toyota Camry" required>
                   <br>
                   <br>
-                  <label>Car Mileage:</label>
-                    <input name="mileage" type="text" class="mileage_input" maxlength="7"  placeholder=" 73,000" required>
+                  <label id="mileage">Car Mileage:</label>
+                    <input aria-labelledby="mileage" name="mileage" type="text" class="mileage_input" maxlength="7"  placeholder=" 73,000" required>
                   <br>
                   <br>
                   <input type="submit" value="Add car" class="button">
@@ -63,14 +63,14 @@
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 
                 <div class="thumbnail">
-                    <img src="car-garage.jpg" class="img-responsive" alt="">
-                    <div class="caption-full">
+                    <img role="presentation" src="car-garage.jpg" class="img-responsive" alt="car garage image">
+                    <div role="contentinfo" class="caption-full">
                         <h3><%= title %></h3>
                         <p>Welcome to the <%= title %>. This RESTful tool allows you to create, update, remove and list all cars in our database, demonstrating my knowledge of AJAX methods!</p>
                     </div>
                 </div>
 
-                <div class="well"><div class="database"></div><p id="car_count">Fill me up with cars!</p></div>
+                <div class="well"><div role="main" class="database"></div><p id="car_count">Fill me up with cars!</p></div>
 
             </div>
 
